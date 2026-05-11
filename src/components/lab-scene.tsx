@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { motion, useReducedMotion } from "motion/react";
 
 import { DossierPanel } from "@/components/dossier-panel";
 import { NodeMap } from "@/components/node-map";
@@ -16,6 +17,7 @@ type LabSceneProps = {
 export function LabScene({ nodes, tethers }: LabSceneProps) {
   const [selectedNodeId, setSelectedNodeId] = useState("the-grid");
   const [dossierOpen, setDossierOpen] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   const selectedNode = useMemo(
     () => nodes.find((node) => node.id === selectedNodeId) ?? nodes[0],
@@ -53,7 +55,12 @@ export function LabScene({ nodes, tethers }: LabSceneProps) {
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,7,18,0.72),rgba(3,7,18,0.26)_48%,rgba(3,7,18,0.7)),radial-gradient(circle_at_68%_32%,rgba(103,232,249,0.08),transparent_34%),radial-gradient(circle_at_28%_82%,rgba(167,139,250,0.08),transparent_30%)]" />
 
       <section className="relative z-10 mx-auto grid min-h-[calc(100vh-2.5rem)] max-w-7xl grid-rows-[auto_1fr] gap-5">
-        <header className="flex flex-col gap-4 border-b border-cyan-100/20 bg-black/12 px-3 py-3 backdrop-blur-[1px] sm:flex-row sm:items-center sm:justify-between">
+        <motion.header
+          className="flex flex-col gap-4 border-b border-cyan-100/20 bg-black/12 px-3 py-3 backdrop-blur-[1px] sm:flex-row sm:items-center sm:justify-between"
+          initial={reduceMotion ? false : { opacity: 0, y: -14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: reduceMotion ? 0 : 0.22, duration: 0.8, ease: "easeOut" }}
+        >
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-100/65">
               Sector Active
@@ -75,10 +82,15 @@ export function LabScene({ nodes, tethers }: LabSceneProps) {
               Lab View
             </button>
           </nav>
-        </header>
+        </motion.header>
 
         <div className="grid gap-5 lg:grid-cols-[230px_minmax(0,1fr)_340px]">
-          <aside className="flex flex-col justify-between border border-amber-100/25 bg-black/18 p-4 shadow-2xl shadow-black/20 backdrop-blur-[2px]">
+          <motion.aside
+            className="flex flex-col justify-between border border-amber-100/25 bg-black/18 p-4 shadow-2xl shadow-black/20 backdrop-blur-[2px]"
+            initial={reduceMotion ? false : { opacity: 0, x: -22 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: reduceMotion ? 0 : 0.48, duration: 0.9, ease: "easeOut" }}
+          >
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.24em] text-amber-100/70">
                 Operator Bay
@@ -95,9 +107,14 @@ export function LabScene({ nodes, tethers }: LabSceneProps) {
                 Floating displays: standby
               </p>
             </div>
-          </aside>
+          </motion.aside>
 
-          <section className="grid min-h-[38rem] grid-rows-[1fr_auto] gap-4">
+          <motion.section
+            className="grid min-h-[38rem] grid-rows-[1fr_auto] gap-4"
+            initial={reduceMotion ? false : { opacity: 0, scale: 0.975, y: 18 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: reduceMotion ? 0 : 0.72, duration: 0.95, ease: "easeOut" }}
+          >
             <NodeMap
               nodes={nodes}
               tethers={tethers}
@@ -120,15 +137,21 @@ export function LabScene({ nodes, tethers }: LabSceneProps) {
                 </button>
               ))}
             </div>
-          </section>
+          </motion.section>
 
-          <DossierPanel
-            node={selectedNode}
-            relatedNodes={relatedNodes}
-            relatedTethers={relatedTethers}
-            open={dossierOpen}
-            onClose={() => setDossierOpen(false)}
-          />
+          <motion.div
+            initial={reduceMotion ? false : { opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: reduceMotion ? 0 : 0.95, duration: 0.9, ease: "easeOut" }}
+          >
+            <DossierPanel
+              node={selectedNode}
+              relatedNodes={relatedNodes}
+              relatedTethers={relatedTethers}
+              open={dossierOpen}
+              onClose={() => setDossierOpen(false)}
+            />
+          </motion.div>
         </div>
       </section>
     </main>

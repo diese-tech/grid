@@ -80,8 +80,8 @@ export function NodeMap({ nodes, tethers, selectedNodeId, onSelectNode }: NodeMa
   );
 
   return (
-    <div className="relative h-full min-h-[22rem] overflow-hidden border border-cyan-100/20 bg-slate-950/50 shadow-2xl shadow-cyan-950/30">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.14),transparent_38%),linear-gradient(90deg,rgba(125,211,252,0.08)_1px,transparent_1px),linear-gradient(0deg,rgba(125,211,252,0.08)_1px,transparent_1px)] bg-[length:auto,48px_48px,48px_48px]" />
+    <div className="relative h-full min-h-[22rem] overflow-hidden border border-cyan-100/20 bg-slate-950/14 shadow-2xl shadow-cyan-950/20 backdrop-blur-[1px]">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.12),transparent_38%),linear-gradient(90deg,rgba(125,211,252,0.055)_1px,transparent_1px),linear-gradient(0deg,rgba(125,211,252,0.055)_1px,transparent_1px)] bg-[length:auto,48px_48px,48px_48px]" />
       <svg
         viewBox="0 0 960 520"
         role="img"
@@ -231,7 +231,7 @@ export function NodeMap({ nodes, tethers, selectedNodeId, onSelectNode }: NodeMa
           );
         })}
       </svg>
-      <div className="absolute bottom-3 left-3 border border-slate-300/10 bg-black/40 px-3 py-2 font-mono text-xs uppercase tracking-[0.16em] text-slate-300">
+      <div className="absolute bottom-3 left-3 border border-slate-300/10 bg-black/22 px-3 py-2 font-mono text-xs uppercase tracking-[0.16em] text-slate-300 backdrop-blur-[1px]">
         Local view: {visibleNodes.length} nodes
       </div>
     </div>

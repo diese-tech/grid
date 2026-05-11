@@ -47,13 +47,13 @@ export function LabScene({ nodes, tethers }: LabSceneProps) {
         alt="A cold blue lab with active workstations and suspended node systems"
         fill
         priority
-        className="object-cover opacity-44"
+        className="object-cover opacity-82"
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,7,18,0.94),rgba(3,7,18,0.62)_48%,rgba(3,7,18,0.88)),radial-gradient(circle_at_68%_32%,rgba(103,232,249,0.14),transparent_32%),radial-gradient(circle_at_28%_82%,rgba(167,139,250,0.14),transparent_28%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,7,18,0.72),rgba(3,7,18,0.26)_48%,rgba(3,7,18,0.7)),radial-gradient(circle_at_68%_32%,rgba(103,232,249,0.08),transparent_34%),radial-gradient(circle_at_28%_82%,rgba(167,139,250,0.08),transparent_30%)]" />
 
       <section className="relative z-10 mx-auto grid min-h-[calc(100vh-2.5rem)] max-w-7xl grid-rows-[auto_1fr] gap-5">
-        <header className="flex flex-col gap-4 border-b border-cyan-100/15 pb-4 sm:flex-row sm:items-center sm:justify-between">
+        <header className="flex flex-col gap-4 border-b border-cyan-100/20 bg-black/12 px-3 py-3 backdrop-blur-[1px] sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-cyan-100/65">
               Sector Active
@@ -77,8 +77,8 @@ export function LabScene({ nodes, tethers }: LabSceneProps) {
           </nav>
         </header>
 
-        <div className="grid gap-5 lg:grid-cols-[250px_1fr_360px]">
-          <aside className="flex flex-col justify-between border border-amber-100/20 bg-black/40 p-4 backdrop-blur-sm">
+        <div className="grid gap-5 lg:grid-cols-[230px_minmax(0,1fr)_340px]">
+          <aside className="flex flex-col justify-between border border-amber-100/25 bg-black/18 p-4 shadow-2xl shadow-black/20 backdrop-blur-[2px]">
             <div>
               <p className="font-mono text-xs uppercase tracking-[0.24em] text-amber-100/70">
                 Operator Bay
@@ -89,8 +89,8 @@ export function LabScene({ nodes, tethers }: LabSceneProps) {
               </p>
             </div>
             <div className="mt-8 grid gap-3">
-              <div className="h-20 border border-cyan-100/10 bg-cyan-100/5" />
-              <div className="h-12 border border-violet-100/10 bg-violet-100/5" />
+              <div className="h-20 border border-cyan-100/15 bg-cyan-100/5" />
+              <div className="h-12 border border-violet-100/15 bg-violet-100/5" />
               <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-500">
                 Floating displays: standby
               </p>
@@ -111,7 +111,7 @@ export function LabScene({ nodes, tethers }: LabSceneProps) {
                   key={node.id}
                   type="button"
                   onClick={() => handleSelectNode(node.id)}
-                  className="border border-cyan-100/15 bg-black/35 p-3 text-left transition hover:bg-cyan-100/10 focus:outline-none focus:ring-2 focus:ring-cyan-200"
+                  className="border border-cyan-100/20 bg-black/18 p-3 text-left shadow-lg shadow-black/15 backdrop-blur-[1px] transition hover:bg-cyan-100/10 focus:outline-none focus:ring-2 focus:ring-cyan-200"
                 >
                   <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-cyan-100/60">
                     Direct node

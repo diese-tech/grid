@@ -1,18 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 
-import type { GridNode, GridSector, GridTether } from "@/data/grid";
+import type { GridNode, GridSector } from "@/data/grid";
 
 type TransitLayerProps = {
   nodes: GridNode[];
   sectors: GridSector[];
-  tethers: GridTether[];
+  onEnterLab: () => void;
 };
 
-export function TransitLayer({ nodes, sectors, tethers }: TransitLayerProps) {
+export function TransitLayer({ nodes, sectors, onEnterLab }: TransitLayerProps) {
   const reduceMotion = useReducedMotion();
   const visibleNodes = nodes.filter((node) => !node.hidden);
   const lab = sectors.find((sector) => sector.id === "the-lab");
@@ -81,12 +80,13 @@ export function TransitLayer({ nodes, sectors, tethers }: TransitLayerProps) {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/lab"
+              <button
+                type="button"
+                onClick={onEnterLab}
                 className="border border-cyan-100/35 bg-cyan-100 px-5 py-3 font-mono text-sm uppercase tracking-[0.16em] text-slate-950 transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-cyan-200"
               >
                 Enter The Lab
-              </Link>
+              </button>
               <a
                 href="#node-map"
                 className="border border-cyan-100/25 px-5 py-3 font-mono text-sm uppercase tracking-[0.16em] text-cyan-50 transition hover:bg-cyan-100/10 focus:outline-none focus:ring-2 focus:ring-cyan-200"
@@ -104,9 +104,7 @@ export function TransitLayer({ nodes, sectors, tethers }: TransitLayerProps) {
               <p className="font-mono text-xs uppercase tracking-[0.22em] text-cyan-100/65">
                 Mini map
               </p>
-              <span className="font-mono text-xs text-cyan-200/80">
-                {tethers.length} tethers
-              </span>
+              <span className="font-mono text-xs text-cyan-200/80">local</span>
             </div>
             <div className="mt-5 grid grid-cols-3 gap-2">
               {visibleNodes.map((node, index) => (

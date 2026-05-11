@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 type BootSequenceProps = {
@@ -16,6 +17,15 @@ const bootSignals = [
 
 export function BootSequence({ active, onComplete }: BootSequenceProps) {
   const reduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    if (!active) {
+      return;
+    }
+
+    const timer = window.setTimeout(onComplete, reduceMotion ? 80 : 2800);
+    return () => window.clearTimeout(timer);
+  }, [active, onComplete, reduceMotion]);
 
   return (
     <AnimatePresence>
@@ -66,11 +76,6 @@ export function BootSequence({ active, onComplete }: BootSequenceProps) {
                     delay: reduceMotion ? 0 : 0.45 + index * 0.32,
                     duration: 0.45,
                   }}
-                  onAnimationComplete={() => {
-                    if (index === bootSignals.length - 1 && !reduceMotion) {
-                      window.setTimeout(onComplete, 650);
-                    }
-                  }}
                 >
                   <span>{signal}</span>
                   <span className="text-amber-200">ready</span>
@@ -87,11 +92,6 @@ export function BootSequence({ active, onComplete }: BootSequenceProps) {
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
                 transition={{ duration: reduceMotion ? 0 : 2.3, ease: "easeInOut" }}
-                onAnimationComplete={() => {
-                  if (reduceMotion) {
-                    onComplete();
-                  }
-                }}
               />
             </motion.div>
           </motion.div>

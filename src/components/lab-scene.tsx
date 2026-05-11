@@ -131,8 +131,6 @@ export function LabScene({ nodes, tethers }: LabSceneProps) {
           />
         </div>
       </section>
-
-      <div className="pointer-events-none absolute bottom-8 left-1/2 z-10 h-28 w-44 -translate-x-1/2 border border-slate-400/10 bg-black/30 shadow-2xl shadow-cyan-950/40 backdrop-blur-[2px]" />
     </main>
   );
 }

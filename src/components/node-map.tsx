@@ -60,6 +60,16 @@ const statusStyles: Record<NodeStatus, { fill: string; stroke: string; glow: str
   },
 };
 
+const pulseDurations: Record<NodeStatus, string> = {
+  active: "3.8s",
+  experimental: "2.6s",
+  archived: "6s",
+  "under-construction": "3.1s",
+  corrupted: "1.8s",
+  hidden: "5s",
+  redacted: "5s",
+};
+
 export function NodeMap({ nodes, tethers, selectedNodeId, onSelectNode }: NodeMapProps) {
   const nodeById = new Map(nodes.map((node) => [node.id, node]));
   const selectedNode = nodeById.get(selectedNodeId) ?? nodes[0];
@@ -172,7 +182,26 @@ export function NodeMap({ nodes, tethers, selectedNodeId, onSelectNode }: NodeMa
                 fill={style.glow}
                 filter="url(#node-glow)"
                 opacity={isSelected ? 0.75 : 0.38}
-              />
+              >
+                <animate
+                  attributeName="opacity"
+                  dur={pulseDurations[node.status]}
+                  repeatCount="indefinite"
+                  values={
+                    node.status === "archived"
+                      ? "0.18;0.28;0.18"
+                      : node.status === "experimental"
+                        ? "0.32;0.72;0.42;0.58;0.32"
+                        : "0.34;0.72;0.34"
+                  }
+                />
+                <animate
+                  attributeName="r"
+                  dur={pulseDurations[node.status]}
+                  repeatCount="indefinite"
+                  values={`${radius + 8};${radius + 14};${radius + 8}`}
+                />
+              </circle>
               <circle
                 r={radius}
                 fill={style.fill}

@@ -17,6 +17,18 @@ export function DossierPanel({
   open,
   onClose,
 }: DossierPanelProps) {
+  const signalLabel = {
+    "github-ready": "Repository signal ready",
+    manual: "Manual record",
+    "static-seed": "Seed record",
+  }[node.metadata.liveState];
+  const sectorLabel = node.sector
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+  const priorityLabel =
+    node.importance >= 90 ? "Anchor system" : node.importance >= 75 ? "Active system" : "Supporting system";
+
   return (
     <aside
       className={`relative flex min-h-[26rem] flex-col border border-cyan-100/20 bg-slate-950/70 p-4 shadow-2xl shadow-cyan-950/30 backdrop-blur-md transition duration-500 ${
@@ -57,19 +69,19 @@ export function DossierPanel({
             <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-slate-500">
               Signal
             </dt>
-            <dd className="mt-1 text-cyan-100">{node.metadata.liveState}</dd>
+            <dd className="mt-1 text-cyan-100">{signalLabel}</dd>
           </div>
           <div className="border border-cyan-100/10 bg-cyan-100/5 p-3">
             <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-slate-500">
-              Importance
+              Priority
             </dt>
-            <dd className="mt-1 text-cyan-100">{node.importance}</dd>
+            <dd className="mt-1 text-cyan-100">{priorityLabel}</dd>
           </div>
           <div className="border border-cyan-100/10 bg-cyan-100/5 p-3">
             <dt className="font-mono text-[11px] uppercase tracking-[0.16em] text-slate-500">
               Sector
             </dt>
-            <dd className="mt-1 text-cyan-100">{node.sector}</dd>
+            <dd className="mt-1 text-cyan-100">{sectorLabel}</dd>
           </div>
         </dl>
 

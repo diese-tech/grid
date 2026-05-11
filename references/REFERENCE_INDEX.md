@@ -127,6 +127,56 @@ Suggested split:
 - What NOT to copy: military interrogation tone, grim realism, torture-room framing, direct visual styling.
 - Notes: Strong reference for PS2/old-game spatial menu energy, even though it is not literally PS2.
 
+### Generated Concept — Lab Lockdown Containment
+- File/Link: `references/generated-concepts/lab-lockdown-containment-v01.png`
+- Category: generated-concepts / lockdown / Lab event-state
+- Tier: 1
+- Source: Generated concept
+- Why it belongs: strong containment-event atmosphere, operator scale, red emergency lighting, heavy industrial machinery, and suspended systems.
+- What to steal emotionally: the feeling that The Grid reacts to instability around the operator and temporarily locks itself down.
+- What NOT to copy: making the default Lab red, hostile, militarized, or permanently in alert mode.
+- Notes: Use only as lockdown/event-state inspiration. Default Lab should remain safer, colder, more cyan/blue, and more inspiring.
+
+### Generated Concept — Dreamspace Lab Atmosphere
+- File/Link: `references/generated-concepts/dreamspace-lab-atmosphere-v01.png`
+- Category: generated-concepts / Lab / atmosphere
+- Tier: 1
+- Source: Generated concept
+- Why it belongs: captures the safe but strange Lab feeling: cold blue atmosphere, human workstation energy, floating nodes, cat detail, and wide environmental depth.
+- What to steal emotionally: active creative space, warm human pockets inside cold infrastructure, and the sense that systems are quietly running around the operator.
+- What NOT to copy: making the Lab too cozy, too clean, or too static.
+- Notes: Strong default Lab atmosphere reference.
+
+### Generated Concept — Node Map Planning Table
+- File/Link: `references/generated-concepts/node-map-planning-table-v01.png`
+- Category: generated-concepts / node-map / planning-table
+- Tier: 1
+- Source: Generated concept
+- Why it belongs: best current visual anchor for the node map as an operational planning table rather than a flat web graph.
+- What to steal emotionally: strategic map-table feeling, glowing node relationships, project-lineage visualization, and tactile interaction surface.
+- What NOT to copy: turning the map into a generic sci-fi table UI or cluttered network wallpaper.
+- Notes: Strongest current concept for the Lab’s central node-map experience.
+
+### Generated Concept — Lab Operator Node Tethers
+- File/Link: `references/generated-concepts/lab-operator-node-tethers-v01.png`
+- Category: generated-concepts / Lab / composition
+- Tier: 1
+- Source: Generated concept
+- Why it belongs: aligns with the desired Lab scene: operator presence, workstation, server racks, floating nodes, cables/tethers, and human artifacts.
+- What to steal emotionally: operator-in-background composition, active systems in foreground, and a room that feels maintained by a real person.
+- What NOT to copy: over-cluttering the scene or making the operator feel like a mascot/main character.
+- Notes: Best current Lab composition reference.
+
+### Generated Concept — Homepage Transit Station
+- File/Link: `references/generated-concepts/homepage-transit-station-v01.jpeg`
+- Category: generated-concepts / homepage / transit-layer
+- Tier: 1
+- Source: Generated concept
+- Why it belongs: captures the homepage as a quiet station/transit layer with route signage, depth, and calm operational atmosphere.
+- What to steal emotionally: liminal station mood, orientation-before-entry feeling, and movement toward unseen sectors.
+- What NOT to copy: making the homepage too sterile, too empty, or too much like a literal train-station website.
+- Notes: Strongest current visual anchor for the homepage threshold experience.
+
 ---
 
 ## Tier 2 — Supporting Inspiration

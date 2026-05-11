@@ -26,7 +26,7 @@ export function GridExperience({ nodes, sectors }: GridExperienceProps) {
       () => {
         router.push("/lab");
       },
-      reduceMotion ? 80 : 1350,
+      reduceMotion ? 80 : 1850,
     );
   }
 

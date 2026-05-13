@@ -1,0 +1,76 @@
+Background:   #070A0F   Deep grid black
+Surface:      #101722   Graphite panel
+Surface 2:    #172131   Elevated slate
+Primary:      #67E8F9   Cyan signal
+Secondary:    #8B5CF6   Violet node glow
+Accent:       #F59E0B   Warm operator amber
+Danger/Decay: #EF4444   Corruption red
+Success:      #22C55E   Active green
+Text:         #E5E7EB   Soft white
+Muted Text:   #94A3B8   Fog gray
+
+
+Cold Systems, Warm Human - Core Palette
+#05070B  Void black
+#0B1120  Lab navy
+#111827  Panel graphite
+#38BDF8  System cyan
+#A78BFA  Dream violet
+#FBBF24  Human amber
+#E5E7EB  Primary text
+#64748B  Muted text
+
+Liminal Lab
+#080A0C  Near black
+#111315  Concrete dark
+#1F2933  Industrial slate
+#7DD3FC  Fluorescent blue
+#CBD5E1  Cold light
+#F87171  Red fracture
+#A3E635  Strange signal green
+#94A3B8  Dust gray
+
+Astroneer Tether Network
+#06111A  Space blue-black
+#0F2433  Deep teal panel
+#155E75  Tether teal
+#22D3EE  Active cyan
+#FACC15  Discovery yellow
+#FB923C  Craft orange
+#C084FC  Rare purple
+#F8FAFC  Bright text
+
+Neon Pineapple / Personal Brand Variant
+#09090B  Ink black
+#18181B  Charcoal
+#27272A  Soft panel
+#00E5FF  Electric cyan
+#A3E635  Pineapple green
+#FDE047  Pineapple yellow
+#FB7185  Pink glitch
+#FAFAFA  Text
+
+Executive Operator Mode
+#0A0F1A  Executive navy
+#111827  Card surface
+#1E293B  Border surface
+#60A5FA  Calm blue
+#14B8A6  Teal accent
+#F59E0B  Decision amber
+#F8FAFC  Text
+#94A3B8  Muted text
+
+Base UI:
+Dark graphite, navy, slate
+
+Interactive Layer:
+Cyan glows, blue lines, violet nodes
+
+Human Layer:
+Amber notes, warm lamps, sticky-note details
+
+Chaos Layer:
+Red corruption cracks, pink glitch, strange green signals
+
+Brand Layer:
+Pineapple yellow/green only as easter eggs
